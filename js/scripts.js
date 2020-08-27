@@ -22,6 +22,20 @@ function startScript(){
     // document.getElementById('title-wrapper').appendChild(titleEl);
     document.getElementById('title-wrapper').appendChild(titleEl);
 
+    var navBar = document.createElement('ul');
+    navBar.innerHTML = '<li><a id="home" class="btn" href="default.asp">Home</a></li><li><a id="news" class="btn" href="news.asp">News</a></li><li><a id="contact" class="btn" href="contact.asp">Contact</a></li><li><a id="about" class="btn">About</a></li>';
+    document.body.appendChild(navBar)
+
+    var contentEl = document.createElement('div');
+    contentEl.id = 'content';
+    document.body.appendChild(contentEl)
+
+    function loadAbout() {
+        document.getElementById('content').innerText = 'Welcome';
+        document.getElementById('title').style.display = 'none';
+    }
+
+    document.getElementById('about').addEventListener('click', loadAbout);
 }
 
 
